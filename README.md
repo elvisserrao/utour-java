@@ -10,3 +10,6 @@ Projeto para o PI, atendendo os requisitos desse semestre.
 - PostgreSQL 9.4.26
 - pgAdmin 3 ( ou 4)
 
+## Guias
+
+[Instalando Apache TomCat no Netbeans](https://www.youtube.com/watch?v=Mduy_bRCfkg)
