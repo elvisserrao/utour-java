@@ -8,14 +8,34 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
-.gradient {
+.gradient {    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
     /* Colors generated on: https://colorhunt.co/palette/179481 */
     background: linear-gradient(45deg, #48ACD5, #637AAC, #5697C4, #5F86B6);
     background-size: 300% 300%;
     animation: colors 15s ease infinite;
 }
 
+@keyframes colors {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .navbar { 
+    position: fixed;
+    width: 100%;
+    top: 0;
     width: 100%;
     background-color: rgba(255,255,255,0.3);
     color: #333;
