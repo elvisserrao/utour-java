@@ -6,10 +6,10 @@
         </div>
         
         <ul>
-            <li>Login</li>
-            <li>Locais</li>
-            <li>Roteiros</li>
-            <li>Sobre</li>
+            <li><a href="login.jsp">Login</a></li>
+            <li><a href="#">Locais</a></li>
+            <li><a href="#">Roteiros</a></li>
+            <li><a href="#">Sobre</a></li>
         </ul>
         
     </div>

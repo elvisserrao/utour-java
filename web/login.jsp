@@ -33,7 +33,7 @@
 	<div class="container-login">
             <div class="login-content">
                 <form action="index.html">
-                    <img src="img/utour.png">
+                    <a href="index.jsp"><img src="img/utour.png"></a>
                     <h2 class="title">Bem vindo!</h2>
                     <div class="input-div one">
                         <div class="i">
