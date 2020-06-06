@@ -98,7 +98,7 @@ body{
 	align-items: center;
 	text-align: center;
         margin: auto;
-        margin-top: 45px;
+        margin-top: 0px;
         top: 0;
         bottom: 0;
         right: 0;
@@ -106,15 +106,15 @@ body{
 }
 
 form{
-	width: 400px;
+    width: 300px;
 }
 
 .login-content img{
-    max-height: 300px;
+    max-height: 240px;
 }
 
 .login-content h2{
-	margin: 15px 0;
+	margin: 0 0;
 	color: #333;
 	text-transform: uppercase;
 	font-size: 2.9rem;
@@ -242,3 +242,42 @@ a:hover{
 .btn:hover{
 	background-position: right;
 }
+
+.waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.wave-1 {
+    animation: moveWave1 3s ease-in-out infinite alternate;
+}
+
+@keyframes moveWave1 {
+    from {
+        transform: translateX(-2000px);
+    }
+}
+
+.wave-2 {
+    animation: moveWave2 3s 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes moveWave2 {
+    from {
+        transform: translateX(-1800px);
+    }
+}
+
+.wave-3 {
+    animation: moveWave3 3s 0.7s ease-in-out infinite alternate;
+}
+
+@keyframes moveWave3 {
+    from {
+        transform: translateX(-1600px);
+    }
+}
+
