@@ -8,9 +8,16 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
+.gradient {
+    /* Colors generated on: https://colorhunt.co/palette/179481 */
+    background: linear-gradient(45deg, #48ACD5, #637AAC, #5697C4, #5F86B6);
+    background-size: 300% 300%;
+    animation: colors 15s ease infinite;
+}
+
 .navbar { 
     width: 100%;
-    background-color: #fff;
+    background-color: rgba(255,255,255,0.3);
     color: #333;
     font-size: 1.5rem;
     font-weight: 100;
@@ -40,7 +47,7 @@ body{
     max-width: 120rem;
     margin: 0 auto;
     text-align: center;
-    height: 45px;
+    height: 35px;
 }
 
 .logo {
@@ -52,7 +59,7 @@ body{
     width: 100%;
     top: 0;
     z-index: 20;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.25);
 
 }
 
