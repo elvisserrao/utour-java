@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
-    <%@include file="head.jsp" %>
+    <head>
+        <title>uTour - Uma nova maneira de fazer turismo</title>
+        <link rel="stylesheet" href="css/login.css" />
+        <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
     <body style="overflow: hidden;">
         <svg
         class="waves"
@@ -32,7 +38,7 @@
         </svg>
 	<div class="container-login">
             <div class="login-content">
-                <form action="index.html">
+                <form action="index.jsp">
                     <a href="index.jsp"><img src="img/utour.png"></a>
                     <h2 class="title">Bem vindo!</h2>
                     <div class="input-div one">

@@ -7,6 +7,7 @@
         
         <ul>
             <li><a href="login.jsp">Login</a></li>
+            <li><a href="usuarios-cadastrar.jsp">Cadastre-se</a></li>
             <li><a href="#">Locais</a></li>
             <li><a href="#">Roteiros</a></li>
             <li><a href="#">Sobre</a></li>
