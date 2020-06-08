@@ -42,6 +42,10 @@ public class UsuarioDAO {
         return em.createNamedQuery("Usuario.findAll").getResultList();
     }
     
+    public Usuario consultar(int id) throws Exception {
+        return em.find(Usuario.class, id);
+    }
+    
     public void alterar(Usuario obj) throws Exception {
         
         try {

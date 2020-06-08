@@ -8,61 +8,65 @@ package modelo;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  *
  * @author Elvis Serrão
  */
 @Entity
+@Table(name = "endereco")
 @NamedQueries({
     @NamedQuery(name = "Endereco.findAll", query = "SELECT e FROM Endereco e")})
 public class Endereco implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    @Id
     @Basic(optional = false)
+    @Column(name = "logradouro")
     private String logradouro;
     @Basic(optional = false)
+    @Column(name = "numero")
     private String numero;
     @Basic(optional = false)
+    @Column(name = "bairro")
     private String bairro;
     @Basic(optional = false)
+    @Column(name = "cidade")
     private String cidade;
     @Basic(optional = false)
+    @Column(name = "estado")
     private String estado;
     @Basic(optional = false)
+    @Column(name = "pais")
     private String pais;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    private Integer id;
+    @Column(name = "id")
+    private int id;
     @OneToMany(mappedBy = "enderecoId")
-    private Collection<Usuario> usuarioCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "enderecoId")
     private Collection<Local> localCollection;
 
     public Endereco() {
     }
 
-    public Endereco(Integer id) {
-        this.id = id;
+    public Endereco(String logradouro) {
+        this.logradouro = logradouro;
     }
 
-    public Endereco(Integer id, String logradouro, String numero, String bairro, String cidade, String estado, String pais) {
-        this.id = id;
+    public Endereco(String logradouro, String numero, String bairro, String cidade, String estado, String pais, int id) {
         this.logradouro = logradouro;
         this.numero = numero;
         this.bairro = bairro;
         this.cidade = cidade;
         this.estado = estado;
         this.pais = pais;
+        this.id = id;
     }
 
     public String getLogradouro() {
@@ -113,20 +117,12 @@ public class Endereco implements Serializable {
         this.pais = pais;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
-    }
-
-    public Collection<Usuario> getUsuarioCollection() {
-        return usuarioCollection;
-    }
-
-    public void setUsuarioCollection(Collection<Usuario> usuarioCollection) {
-        this.usuarioCollection = usuarioCollection;
     }
 
     public Collection<Local> getLocalCollection() {
@@ -140,7 +136,7 @@ public class Endereco implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (logradouro != null ? logradouro.hashCode() : 0);
         return hash;
     }
 
@@ -151,7 +147,7 @@ public class Endereco implements Serializable {
             return false;
         }
         Endereco other = (Endereco) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.logradouro == null && other.logradouro != null) || (this.logradouro != null && !this.logradouro.equals(other.logradouro))) {
             return false;
         }
         return true;
@@ -159,7 +155,7 @@ public class Endereco implements Serializable {
 
     @Override
     public String toString() {
-        return "modelo.Endereco[ id=" + id + " ]";
+        return "modelo.Endereco[ logradouro=" + logradouro + " ]";
     }
     
 }

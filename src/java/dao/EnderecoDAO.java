@@ -42,6 +42,10 @@ public class EnderecoDAO {
         return em.createNamedQuery("Endereco.findAll").getResultList();
     }
     
+    public Endereco consultar(String chave) throws Exception {
+        return em.find(Endereco.class, chave);
+    }
+    
     public void alterar(Endereco obj) throws Exception {
         
         try {

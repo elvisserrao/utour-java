@@ -6,9 +6,8 @@
 package modelo;
 
 import java.io.Serializable;
-import java.util.Collection;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,28 +16,32 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  *
  * @author Elvis Serrão
  */
 @Entity
+@Table(name = "local")
 @NamedQueries({
     @NamedQuery(name = "Local.findAll", query = "SELECT l FROM Local l")})
 public class Local implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Basic(optional = false)
+    @Column(name = "descricao")
     private String descricao;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
+    @Column(name = "id")
     private Integer id;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "localId")
-    private Collection<Roteiro> roteiroCollection;
-    @JoinColumn(name = "endereco_id", referencedColumnName = "id")
-    @ManyToOne(optional = false)
+    @Basic(optional = false)
+    @Column(name = "nome")
+    private String nome;
+    @JoinColumn(name = "endereco_id", referencedColumnName = "logradouro")
+    @ManyToOne
     private Endereco enderecoId;
 
     public Local() {
@@ -48,9 +51,10 @@ public class Local implements Serializable {
         this.id = id;
     }
 
-    public Local(Integer id, String descricao) {
+    public Local(Integer id, String descricao, String nome) {
         this.id = id;
         this.descricao = descricao;
+        this.nome = nome;
     }
 
     public String getDescricao() {
@@ -69,12 +73,12 @@ public class Local implements Serializable {
         this.id = id;
     }
 
-    public Collection<Roteiro> getRoteiroCollection() {
-        return roteiroCollection;
+    public String getNome() {
+        return nome;
     }
 
-    public void setRoteiroCollection(Collection<Roteiro> roteiroCollection) {
-        this.roteiroCollection = roteiroCollection;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public Endereco getEnderecoId() {
